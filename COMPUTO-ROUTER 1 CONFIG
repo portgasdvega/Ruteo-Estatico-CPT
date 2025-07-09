@@ -1,0 +1,18 @@
+enable
+configure terminal
+interface fa0/0
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+exit
+interface fa0/1
+ ip address 192.168.4.2 255.255.255.0
+ no shutdown
+exit
+interface fa1/0
+ ip address 192.168.6.1 255.255.255.0
+ no shutdown
+exit
+
+ip route 192.168.2.0 255.255.255.0 192.168.4.1
+ip route 192.168.3.0 255.255.255.0 192.168.6.2
+ip route 192.168.5.0 255.255.255.0 192.168.4.1
